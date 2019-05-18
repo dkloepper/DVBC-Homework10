@@ -20,3 +20,5 @@ Flask application running from app.py and templates/index.html
 Scraping code used exists in scrape_mars.py
 
 Additional CSS in static/style.css
+
+Screenshot of rendered Flask app page: Mission_to_Mars_RenderedWebpage.png
