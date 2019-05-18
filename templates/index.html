@@ -1,0 +1,105 @@
+<!--  David Kloepper
+ Data Visualization Bootcamp, Cohort 3
+ May 18th, 2019 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Facts</title>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+  <!--Import custom bootstrap style-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/spacelab/bootstrap.min.css">
+  <!--CSS Link. Uses static directory, apparently required by Flask-->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="jumbotron text-center col-12">
+        <h1>Mission to Mars</h1>
+        <p>Mars ain't the kind of place to raise your kids.</p>
+        <!--In fact, it's cold as hell.-->
+        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Find out why!</a></p>
+      </div>
+  </div>
+  <hr>
+    <div class="row">
+      <div class="col-12" id="news">
+        <h2>Latest Mars News</h2>
+        <h5><strong>{{ mars.news_title }}</strong></h5>
+        <p>{{ mars.news_paragraph }}</p>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-8">
+        <h3>Featured Mars Image</h3>
+        <img src="{{ mars.featured_image }}" class="img-fluid" alt="Featured Image">
+      </div>
+      <div class="col-4">
+        <div class="container">
+          <div class="row">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Current weather on Mars:</h5>
+                <p class="card-text">{{ mars.weather_tweet }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <br>
+            <h4>Mars Facts</h4>
+                {{ mars.fact_table | safe}}
+          </div>
+         </div>
+      </div>
+    </div>
+    <br>
+    <h3 style="text-align: center">Mars Hemispheres</h3>
+    <hr>
+    <div class="row">
+      <div class="col-6">
+          <div class="card">
+              <img src="{{ mars.hemi_imgs[0]['img_url']}}" class="card-img-top" alt="{{ mars.hemi_imgs[0]['title']}}">
+              <div class="card-body">
+                <h5 class="card-title">{{ mars.hemi_imgs[0]["title"]}}</h5>
+              </div>
+          </div>
+      </div>
+      <div class="col-6">
+          <div class="card">
+              <img src="{{ mars.hemi_imgs[1]['img_url']}}" class="card-img-top" alt="{{ mars.hemi_imgs[1]['title']}}">
+              <div class="card-body">
+                <h5 class="card-title">{{ mars.hemi_imgs[1]["title"]}}</h5>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <img src="{{ mars.hemi_imgs[2]['img_url']}}" class="card-img-top" alt="{{ mars.hemi_imgs[2]['title']}}">
+                <div class="card-body">
+                  <h5 class="card-title">{{ mars.hemi_imgs[2]["title"]}}</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card">
+                <img src="{{ mars.hemi_imgs[3]['img_url']}}" class="card-img-top" alt="{{ mars.hemi_imgs[3]['title']}}">
+                <div class="card-body">
+                  <h5 class="card-title">{{ mars.hemi_imgs[3]["title"]}}</h5>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>
+<!--I'm a rocketman!-->
+</body>
+
+</html>

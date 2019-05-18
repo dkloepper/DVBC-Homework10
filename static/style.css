@@ -1,0 +1,42 @@
+/*  David Kloepper
+ Data Visualization Bootcamp, Cohort 3
+ May 18th, 2019 */
+
+body{
+    background-color: lightgrey;
+}
+
+/* Images */
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Paragraph Element */
+p{
+    color: #6D8092;
+    font-size: 17px; 
+}
+
+/* Table */
+table{
+    font-size: 15px;
+    text-align: left;
+    background-color: white;
+}
+
+th {
+    text-align: left;
+}
+/* Card */
+.card{
+    padding:10px !important;
+    margin:15px !important;
+}
+
+.card-text{
+    font-size: 15px;
+}
